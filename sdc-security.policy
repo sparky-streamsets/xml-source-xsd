@@ -1,0 +1,10 @@
+// user-defined external directory
+grant codebase "file:///opt/sdc-extras/-" {
+  permission java.security.AllPermission;
+};
+
+grant {
+  permission java.net.SocketPermission "sftp.cluster:22", "connect, accept, resolve";
+  permission java.util.PropertyPermission "user.dir", "read";
+  permission java.io.FilePermission "/training/samples/data/*", "read, write, delete";
+};
